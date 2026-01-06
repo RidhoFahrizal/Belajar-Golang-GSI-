@@ -1,0 +1,29 @@
+Golang dibuat dalam bahasa C
+dirilis sebagai open source pada tahun 2009
+Go-lang populer sejak docker pada tahun 2011
+
+
+banyak teknologi yang menggunakan bahasa golang : 
+1. Kubernetes 
+2. Prometheus
+3. CockroachDB 
+
+
+populer dalam pembuatan API di Microservice 
+
+
+Proses Development Program go-lang
+Go Compiler 
+-> Main.go -> Binary  
+
+Go (Golang) works as a compiled programming language that translates source code directly 
+into native machine code, which is then managed by a small, efficient runtime system. Unlike
+languages that require an interpreter or a large virtual machine (like Java's JVM), Go produces
+a single, standalone executable binary, leading to fast startup times and minimal overhead. 
+
+
+
+
+
+
+
