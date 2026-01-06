@@ -5,12 +5,6 @@ import (
 )
 
 func main(){
-	
-	s := []int{1,2,3}
-	t := s 
-
-	t[0] = 99
-	fmt.Println(s)
 
 	var months = [...]string{
 		"Januari", 
@@ -27,29 +21,32 @@ func main(){
 		"Desember",
 	}
 
-	fmt.Println(months)
-	var slice1 = months[4:7]
-	fmt.Println(slice1)
-	fmt.Println(len(slice1))
-	fmt.Println(cap(slice1))
-
-	var slice2 = months[2:4]
+	// aku melakukan 
+	var slice2 = months[2:4:4]
+	fmt.Println("data slice2","len", len(slice2),"cap", cap(slice2))
 	fmt.Println("Ini slice month[10:]", slice2)
 
-	var slice3 = append(slice2, "Eko")
+
+	// ini praktik yang sangat penting dalam penggunaan slice 
+	
+	var slice3 = append([]string{}, slice2...)// ini adalah praktik yang bagus karena kita membuat array baru 
+	// walaupun si array capacity nya masih bagus dia akan membuat array baru .
+
+
+
+
+
+
+
+
+
 	fmt.Println(slice3)
 
 	slice3[1] = "Bukan Desember"
+
 	fmt.Println(slice3)
-
 	fmt.Println("Ini slice2:",slice2)
-
-
-
-
-
-	fmt.Println("ini months:", months)
-
+	fmt.Println("terjadi perubahan di moths:", months)
 
 
 	newSlice := make([]string, 2,5)
