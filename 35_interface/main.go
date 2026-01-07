@@ -43,9 +43,6 @@ func measure(g geometry) {
     fmt.Println(g.perimeter())
 }
 
-
-
-
 func detectCircle(g geometry) {
     if c, ok := g.(Circle); ok {
         fmt.Println("circle with radius", c.radius)
@@ -57,11 +54,8 @@ func detectCircle(g geometry) {
 func main (){
 	r := Rect{width: 3, height:4}
 	c := Circle{radius: 5}
-
 //	measure(r)
 	measure(c)
-
 	detectCircle(r)
 	detectCircle(c)
-
 }
