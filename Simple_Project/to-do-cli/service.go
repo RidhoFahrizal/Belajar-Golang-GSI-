@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"time"
+	"github.com/olekukonko/tablewriter"
+	"os"
 )
 
 func AddTodo(tittle string){	
@@ -15,16 +17,33 @@ func AddTodo(tittle string){
 	})
 }
 
-func ListTodos(){
-	for _, t := range todos{
-		fmt.Println("id:", t.ID )
-		fmt.Println("title:", t.Title)
-		if t.IsDone == true{
-			fmt.Println("Status: Sudah Selesai ")
-		}else{
-			fmt.Println("Status: Belum Dikerjakan")
+
+func ListTodos() {
+	table := tablewriter.NewWriter(os.Stdout)
+
+	table.Header(
+		"ID",
+		"TITLE",
+		"STATUS",
+		"CREATED AT",
+		"UPDATED AT",
+	)
+
+	for _, t := range todos {
+		status := "Belum"
+		if t.IsDone {
+			status = "Selesai"
 		}
-		fmt.Println("Crated at:", t.CreatedAt)
-		fmt.Println("Updated at:", t.UpdatedAt)
+
+		table.Append(
+			fmt.Sprint(t.ID),
+			t.Title,
+			status,
+			t.CreatedAt.Format("2006-01-02"),
+			t.UpdatedAt.Format("2006-01-02"),
+		)
 	}
+
+	table.Render()
 }
+
