@@ -9,5 +9,7 @@ func main(){
 	AddTodo("Pelajari Struct method")
 	AddTodo("Pelajari Interface Kosong")
 	AddTodo("Pelajari Nil")
+	UpdateTittleTodo(1, "KITA BIKIN PROJECT WEB SOCKET ")
+
 	ListTodos()
 }

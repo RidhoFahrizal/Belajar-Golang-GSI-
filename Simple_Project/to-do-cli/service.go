@@ -18,6 +18,16 @@ func AddTodo(tittle string){
 }
 
 
+func UpdateTittleTodo(id int, title string){
+	// lenght := len(todos)
+	for i := range todos {
+		if todos[i].ID == id{
+			todos[i].Title = title
+			return   
+		}
+	}
+}
+
 func ListTodos() {
 	table := tablewriter.NewWriter(os.Stdout)
 

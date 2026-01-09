@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 )
-
+	
 type Todo struct{
 	ID int
 	Title string
@@ -14,5 +14,3 @@ type Todo struct{
 
 //gunakan slice sebagai database
 var todos []Todo 
-
-
