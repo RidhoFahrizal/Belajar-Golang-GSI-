@@ -2,14 +2,21 @@ package main
 
 import (
 	"fmt"
+	"os"
+	_"slices"
 	"time"
 	"github.com/olekukonko/tablewriter"
-	"os"
 )
+/**
+1. PASTIKAN DALAM SERVICE INI PASTIKAN DIA BERPAKU PADA INDEKS
+2. SEGALA JENIS UPDATE SERTA DELETE BERPAKU PADA INDEKS
+*/
+
+
+
 
 func AddTodo(tittle string){	
 	todos = append(todos, Todo{
-		ID: len(todos) + 1,
 		Title: tittle,
 		CreatedAt: time.Now(),
 		UpdatedAt: time.Now(),
@@ -18,18 +25,31 @@ func AddTodo(tittle string){
 }
 
 
-func UpdateTittleTodo(id int, title string){
-	// lenght := len(todos)
+func UpdateTittleTodo(index int, title string){
 	for i := range todos {
-		if todos[i].ID == id{
+		if i == index{
 			todos[i].Title = title
 			return   
 		}
 	}
 }
 
+
+func DeleteTodo(index int) {
+	index -= 1 
+	if index < 0 || index >= len(todos) {
+		return
+	}
+	todos = append(todos[:index], todos[index+1:]...)
+}
+
+
+
 func ListTodos() {
+	
+	index :=1
 	table := tablewriter.NewWriter(os.Stdout)
+
 
 	table.Header(
 		"ID",
@@ -46,12 +66,14 @@ func ListTodos() {
 		}
 
 		table.Append(
-			fmt.Sprint(t.ID),
+			fmt.Sprint(index),
 			t.Title,
 			status,
 			t.CreatedAt.Format("2006-01-02"),
 			t.UpdatedAt.Format("2006-01-02"),
 		)
+
+		index++
 	}
 
 	table.Render()
