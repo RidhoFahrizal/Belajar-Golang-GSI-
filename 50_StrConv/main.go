@@ -13,7 +13,15 @@ func main(){
 		fmt.Println(err.Error())
 	}
 	
+	var foo []int
 
-	num, err := strconv.Atoi("4339284987498274")
+	foo = append(foo, 1,2,3,4,5,6,7)
+
+	num, err := strconv.Atoi("jsdfdfkdfkd")
+
+	if err != nil {
+		fmt.Println(fmt.Errorf("tolong masukkan karakter angka"))
+	}
+	fmt.Println(len(foo))
 	fmt.Println(num)
 }
