@@ -43,7 +43,13 @@ func DeleteTodo(index int) {
 	todos = append(todos[:index], todos[index+1:]...)
 }
 
-
+func MarkTaskIsDone(index int){
+	index -= 1
+	if index < 0 || index >= len(todos) {
+		return
+	}
+	todos[index].IsDone = true
+}
 
 func ListTodos() {
 	
@@ -60,9 +66,9 @@ func ListTodos() {
 	)
 
 	for _, t := range todos {
-		status := "Belum"
+		status := "❌ BELUM"
 		if t.IsDone {
-			status = "Selesai"
+			status = "✅️ SELESAI"
 		}
 
 		table.Append(
