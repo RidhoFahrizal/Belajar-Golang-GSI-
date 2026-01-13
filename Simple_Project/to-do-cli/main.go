@@ -9,7 +9,6 @@ import (
 	_ "strings"
 )
 
-// kita pake util untuk mengambil input me
 func main(){
 	reader := bufio.NewReader(os.Stdin) 
 	fmt.Println("Disini akan di tulis project todo-sederhana")
