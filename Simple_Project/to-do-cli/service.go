@@ -27,7 +27,7 @@ func AddTodo(tittle string){
 
 func UpdateTittleTodo(index int, title string){
 	for i := range todos {
-		if i == index{
+		if i == index-1{
 			todos[i].Title = title
 			return   
 		}

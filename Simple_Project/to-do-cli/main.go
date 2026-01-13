@@ -44,14 +44,30 @@ func main(){
 			}
 			AddTodo(foo)
 		case "2": 
-			fmt.Println("isi menu")
+			var fooInt int 
+			for{
+				fmt.Print("Masukkan Tugas yang ingin di ubah:")
+				foo, err := ReadLine(reader)
+				if err != nil {
+					fmt.Println("gagal membaca input")
+					continue
+				}
+				fooInt, err = strconv.Atoi(foo)
+				if err != nil {
+					fmt.Print(fmt.Errorf("Tolong masukkan angka "))
+					continue
+				}
+				
+				break
+			}
+		fmt.Print("isi menu:")
 			foo, err := ReadLine(reader)
 			if  err != nil{
 				fmt.Println("Terjadi kesalahan saat membuat ReadLine")
 			}
-			UpdateTittleTodo(1, foo)
+			UpdateTittleTodo(fooInt, foo)
 		case "3":
-			var fooInt int
+			var fooInt int 
 			for{
 				fmt.Print("Tugas Mana yang sudah :")
 				foo, err := ReadLine(reader)
