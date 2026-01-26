@@ -57,7 +57,6 @@ func main(){
 					fmt.Print(fmt.Errorf("Tolong masukkan angka "))
 					continue
 				}
-				
 				break
 			}
 		fmt.Print("isi menu:")
@@ -80,7 +79,6 @@ func main(){
 					fmt.Print(fmt.Errorf("Tolong masukkan angka "))
 					continue
 				}
-				
 				break
 			}
 			if fooInt > len(todos) {

@@ -6,8 +6,6 @@ import(
 	"strings"
 )
 
-
-
 func ReadLine(reader * bufio.Reader)(string, error){
 	text, err := reader.ReadString('\n')
 	if err != nil {

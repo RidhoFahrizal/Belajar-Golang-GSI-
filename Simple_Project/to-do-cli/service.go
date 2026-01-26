@@ -34,7 +34,6 @@ func UpdateTittleTodo(index int, title string){
 	}
 }
 
-
 func DeleteTodo(index int) {
 	index -= 1 
 	if index < 0 || index >= len(todos) {
